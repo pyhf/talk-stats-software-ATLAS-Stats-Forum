@@ -56,6 +56,46 @@ UCSC SCIPP
 - Would you be willing to contribute to the development of a centrally distributed toolkit that provides functionality for providing common statistical operations (e.g. calculating a p-value)?
 
 ---
+# `pyhf` functionality
+
+- Slide
+
+---
+# attractiveness to users
+
+- Slide
+- Easy to use and install
+- Fast
+- Pythonic
+- CLI
+
+---
+# documentation, development, and user interactions
+
+- Slide
+
+---
+# External dependencies
+
+- Ever heard of the SciPy stack brah?
+
+---
+# Common utilities to ATLAS
+
+- Just adopt us already
+
+---
+# Common software
+
+- All of it
+
+---
+# Contributing to central toolkit?
+
+- Depends
+- Don't kludge it up dude
+
+---
 # Summary
 .kol-2-3[
 .large[`pyhf` provides:]
