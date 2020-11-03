@@ -6,13 +6,14 @@ count: false
 <br>
 
 .huge.blue[Matthew Feickert]<br>
+on behalf of the `pyhf` dev team<br>
 .huge[(University of Illinois at Urbana-Champaign)]
 <br><br>
 [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
 
-[Tools for High Energy Physics and Cosmology 2020 Workshop](https://indico.cern.ch/event/955391/contributions/4075505/)
+[ATLAS Statistics Forum](https://indico.cern.ch/event/955391/contributions/4075505/)
 
-November 3rd, 2020
+December 3rd, 2020
 
 ---
 # `pyhf` team
@@ -42,6 +43,17 @@ Illinois
 UCSC SCIPP
 ]
 ]
+
+---
+# Questions
+
+- Please, provide a list of the functionalities of your toolkit.
+- Out of all the toolkits, why do you think your users choose to use yours?
+- What is the person-power contributing to the development and support of your toolkit? Which kind of documentation is provided and in which form (README, website, TWiki, others...)? Are things like JIRA and/or git used for issues and tasks?
+- Is your toolkit using some external packages / common scripts / macros / functions to perform some of the operations like fit, limit setting, significance computation, Asimov-creation, ranking plot?
+- Which pieces of your toolkit could be factorized out into a package that would be developed/supported/distributed by ATLAS?
+- What additional common software could your toolkit take advantage of?
+- Would you be willing to contribute to the development of a centrally distributed toolkit that provides functionality for providing common statistical operations (e.g. calculating a p-value)?
 
 ---
 # Summary
