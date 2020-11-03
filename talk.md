@@ -47,6 +47,8 @@ UCSC SCIPP
 ---
 # Questions
 
+> We intend to organise two Statistics Forum meetings, where we invite the developers of various packages to give 10 min talks (followed by some time for discussion) focusing strictly on the following points:
+
 - Please, provide a list of the functionalities of your toolkit.
 - Out of all the toolkits, why do you think your users choose to use yours?
 - What is the person-power contributing to the development and support of your toolkit? Which kind of documentation is provided and in which form (README, website, TWiki, others...)? Are things like JIRA and/or git used for issues and tasks?
