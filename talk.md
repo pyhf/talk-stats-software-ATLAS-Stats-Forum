@@ -57,6 +57,8 @@ UCSC SCIPP
 - What additional common software could your toolkit take advantage of?
 - Would you be willing to contribute to the development of a centrally distributed toolkit that provides functionality for providing common statistical operations (e.g. calculating a p-value)?
 
+Speakers should .bold[upload their slides 48h in advance] of the meeting
+
 ---
 # `pyhf` functionality
 
