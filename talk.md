@@ -13,7 +13,7 @@ on behalf of the `pyhf` dev team<br>
 
 [ATLAS Statistics Forum](https://indico.cern.ch/event/955391/contributions/4075505/)
 
-December 3rd, 2020
+December 10th, 2020
 
 ---
 # `pyhf` team
