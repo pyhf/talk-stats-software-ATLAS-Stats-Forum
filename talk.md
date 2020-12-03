@@ -100,6 +100,14 @@ Speakers should .bold[upload their slides 48h in advance] of the meeting
 - Don't kludge it up dude
 
 ---
+# Points to add given last week's talks
+
+- Alex mentioned the importance of metadata
+- People keep focusing on plotting, so should make it clear that we can
+already interface with `cabinetry`
+- Stress the importance that things are already open
+
+---
 # Summary
 .kol-2-3[
 .large[`pyhf` provides:]
