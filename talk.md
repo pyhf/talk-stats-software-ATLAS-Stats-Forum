@@ -5,8 +5,7 @@ count: false
 
 <br>
 
-.huge.blue[Matthew Feickert]<br>
-on behalf of the `pyhf` dev team<br>
+.huge[Lukas Heinrich], .huge.blue[Matthew Feickert], .huge[Giordon Stark]<br><br>
 .huge[(University of Illinois at Urbana-Champaign)]
 <br><br>
 [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
