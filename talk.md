@@ -11,7 +11,7 @@ on behalf of the `pyhf` dev team<br>
 <br><br>
 [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
 
-[ATLAS Statistics Forum](https://indico.cern.ch/event/955391/contributions/4075505/)
+[ATLAS Statistics Forum](https://indico.cern.ch/event/979145/#6-pyhf-10-5)
 
 December 10th, 2020
 
