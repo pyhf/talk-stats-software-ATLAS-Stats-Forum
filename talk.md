@@ -80,124 +80,6 @@ Speakers should .bold[upload their slides 48h in advance] of the meeting
 ]
 
 ---
-# Open Source Industry Tools for Computation
-
-.grid[
-.kol-2-3[
-- All numerical operations implemented in .bold[tensor backends] through an API of $n$-dimensional array operations
-- Using deep learning frameworks as computational backends allows for .bold[exploitation of autodiff and GPU acceleration]
-- As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers (physicists are not)
-
-.kol-1-2.center[
-.width-90[![scaling_hardware](figures/scaling_hardware_annotated.png)]
-]
-.kol-1-2[
-<br>
-- Show hardware acceleration giving .bold[order of magnitude speedup] for some models!
-- Improvements over traditional
-   - 10 hrs to 30 min; 20 min to 10 sec
-]
-]
-.kol-1-4.center[
-.width-85[![NumPy](figures/logos/NumPy_logo.svg)]
-.width-85[![PyTorch](figures/logos/Pytorch_logo.svg)]
-.width-85[![Tensorflow](figures/logos/TensorFlow_logo.svg)]
-
-<br>
-.width-50[![JAX](figures/logos/JAX_logo.png)]
-]
-]
-
----
-# Automatic Differentiation of `pyhf` Models
-
-With tensor library backends gain access to _exact (higher order) derivatives_ &mdash; accuracy is only limited by floating point precision
-
-$$
-\frac{\partial L}{\partial \mu}, \frac{\partial L}{\partial \theta_{i}}
-$$
-
-.grid[
-.kol-1-2[
-.large[Exploit .bold[full gradient of the likelihood] with .bold[modern optimizers] to help speedup fit!]
-
-<br><br>
-.large[Gain this through the frameworks creating _computational directed acyclic graphs_ and then applying the chain rule (to the operations)]
-]
-.kol-1-2[
-.center.width-80[![DAG](figures/computational_graph.png)]
-]
-]
-
----
-# HEP Example: Likelihood Gradients
-
-.footnote[Example adapted from [Lukas Heinrich's PyHEP 2020 tutorial](https://indico.cern.ch/event/882824/timetable/#45-introduction-to-automatic-d)]
-
-.kol-1-2.center[
-.width-90[![carbon_plot_MLE_grads](figures/carbon_plot_MLE_grads.png)]
-]
-.kol-1-2.center[
-.width-90[![MLE_grad_map_full](figures/MLE_grad_map.png)]
-]
-
-.bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
-
----
-# Current Features
-
-- [conversion to/from XML+ROOT to JSON (HistFitter and TRExFitter supported!)](https://scikit-hep.org/pyhf/babel.html)
-- [brazil bands](https://scikit-hep.org/pyhf/examples/notebooks/binderexample/StatisticalAnalysis.html)
-- [pull plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/pullplot.ipynb)†
-- [impact/ranking plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/ImpactPlot.ipynb)†
-- [pseudoexperiments ("toys")](https://scikit-hep.org/pyhf/examples/notebooks/toys.html)
-- [exclusion fits](https://scikit-hep.org/pyhf/examples/notebooks/hello-world.html)
-- [(coming soon) discovery fits](https://github.com/scikit-hep/pyhf/pull/520)
-
-.smaller[†Note: the `pyhf` API is meant to allow for higher-level frameworks to build on top, such as [cabinetry](https://github.com/alexander-held/cabinetry/).
-- missing a meta-language (DSL, metadata) that describes the data that can be passed to plotting utilities
-- `cabinetry` is meant to help with plotting things "correctly"
-- all of this work is openly developed with extensive feedback
-]
-
-See our [<i class="fas fa-road"></i> roadmap](https://scikit-hep.org/pyhf/governance/ROADMAP.html) to get an idea of where we're going!
-
----
-# attractiveness to users
-
-- Slide
-- Easy to use and install
-- Fast
-- Pythonic
-- CLI
-
----
-# documentation, development, and user interactions
-
-.grid[
-.kol-1-1.center[All documentation can be found at [https://scikit-hep.org/pyhf/](https://scikit-hep.org/pyhf/).]
-.kol-1-2[
-In this documentation you can find a list of:
-
-- [presentations](https://scikit-hep.org/pyhf/outreach.html#presentations),
-- [tutorials](https://scikit-hep.org/pyhf/outreach.html#tutorials),
-- [posters](https://scikit-hep.org/pyhf/outreach.html#posters), and
-- [media outreach](https://scikit-hep.org/pyhf/outreach.html#in-the-media).
-
-All of our documentation is tested nightly, against our software, as well as updates to software and tools we depend on. In addition to this, we've made full use of:
-
-- [sphinx](https://www.sphinx-doc.org/en/master/) - main documentation
-- [jupyter](https://jupyter.org/) - fundamentals and tutorials
-
-]
-.kol-1-2[
-Most recently gave a successful, in-depth tutorial at the ATLAS SUSY+Exotics workshop.
-
-.width-100[[![atlas susy exotics workshop](figures/atlas_susy_exotics_workshop.png)](https://pyhf.github.io/tutorial-ATLAS-SUSY-Exotics-2020/introduction.html)]
-]
-]
-
----
 # External dependencies
 
 Required dependencies from our `setup.cfg`:
@@ -242,28 +124,187 @@ We have lots of optional dependencies depending on what users want to do:
 - [uproot](https://uproot.readthedocs.io/)
 
 ---
-# Common utilities to ATLAS
+# Open Source Industry Tools for Computation
 
-- Just adopt us already
+.grid[
+.kol-2-3[
+- All numerical operations implemented in .bold[tensor backends] through an API of $n$-dimensional array operations
+- Using deep learning frameworks as computational backends allows for .bold[exploitation of autodiff and GPU acceleration]
+- As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers (physicists are not)
+
+.kol-1-2.center[
+.width-90[![scaling_hardware](figures/scaling_hardware_annotated.png)]
+]
+.kol-1-2[
+<br>
+- Show hardware acceleration giving .bold[order of magnitude speedup] for some models!
+- Improvements over traditional
+   - 10 hrs to 30 min; 20 min to 10 sec
+]
+]
+.kol-1-4.center[
+.width-85[![NumPy](figures/logos/NumPy_logo.svg)]
+.width-85[![PyTorch](figures/logos/Pytorch_logo.svg)]
+.width-85[![Tensorflow](figures/logos/TensorFlow_logo.svg)]
+
+<br>
+.width-50[![JAX](figures/logos/JAX_logo.png)]
+]
+]
 
 ---
-# Common software
+# Current Features
 
-- All of it
+- [unconstrained](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fit.html) and [constrained fits](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fixed_poi_fit.html)
+- [exclusion fits](https://scikit-hep.org/pyhf/examples/notebooks/hello-world.html)
+- (coming soon) [discovery fits](https://github.com/scikit-hep/pyhf/pull/520)
+- [conversion to/from XML+ROOT to JSON](https://scikit-hep.org/pyhf/babel.html) (HistFitter and TRExFitter supported!)
+- [brazil bands](https://scikit-hep.org/pyhf/examples/notebooks/binderexample/StatisticalAnalysis.html)
+- [pull plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/pullplot.ipynb)<sup>†</sup>
+- [impact/ranking plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/ImpactPlot.ipynb)<sup>†</sup>
+- [pseudoexperiments ("toys")](https://scikit-hep.org/pyhf/examples/notebooks/toys.html)
+
+.smaller[<sup>†</sup>Note: the `pyhf` API is meant to allow for higher-level frameworks to build on top, such as [cabinetry](https://github.com/alexander-held/cabinetry/).
+- missing a meta-language (DSL, metadata) that describes the data that can be passed to plotting utilities
+- `cabinetry` is meant to help with plotting things "correctly"
+- all of this work is openly developed with extensive feedback
+]
+
+See our [<i class="fas fa-road"></i> roadmap](https://scikit-hep.org/pyhf/governance/ROADMAP.html) to get an idea of where we're going!
+
+---
+# Automatic Differentiation of `pyhf` Models
+
+With tensor library backends gain access to _exact (higher order) derivatives_ &mdash; accuracy is only limited by floating point precision
+
+$$
+\frac{\partial L}{\partial \mu}, \frac{\partial L}{\partial \theta_{i}}
+$$
+
+.grid[
+.kol-1-2[
+.large[Exploit .bold[full gradient of the likelihood] with .bold[modern optimizers] to help speedup fit!]
+
+<br><br>
+.large[Gain this through the frameworks creating _computational directed acyclic graphs_ and then applying the chain rule (to the operations)]
+]
+.kol-1-2[
+.center.width-80[![DAG](figures/computational_graph.png)]
+]
+]
+
+---
+# HEP Example: Likelihood Gradients
+
+.footnote[Example adapted from [Lukas Heinrich's PyHEP 2020 tutorial](https://indico.cern.ch/event/882824/timetable/#45-introduction-to-automatic-d)]
+
+.kol-1-2.center[
+.width-90[![carbon_plot_MLE_grads](figures/carbon_plot_MLE_grads.png)]
+]
+.kol-1-2.center[
+.width-90[![MLE_grad_map_full](figures/MLE_grad_map.png)]
+]
+
+.bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
+
+---
+# Documentation and Development
+
+.grid[
+.kol-1-1.center[All documentation can be found at [https://scikit-hep.org/pyhf/](https://scikit-hep.org/pyhf/).]
+.kol-1-2[
+In this documentation you can find a list of:
+
+- [presentations](https://scikit-hep.org/pyhf/outreach.html#presentations),
+- [tutorials](https://scikit-hep.org/pyhf/outreach.html#tutorials),
+- [posters](https://scikit-hep.org/pyhf/outreach.html#posters), and
+- [media outreach](https://scikit-hep.org/pyhf/outreach.html#in-the-media).
+
+All of our documentation is tested nightly, against our software, as well as updates to software and tools we depend on. In addition to this, we've made full use of:
+
+- [sphinx](https://www.sphinx-doc.org/en/master/) - main documentation
+- [jupyter](https://jupyter.org/) - fundamentals and tutorials
+
+]
+.kol-1-2[
+Most recently gave a successful, in-depth tutorial at the ATLAS SUSY+Exotics workshop.
+
+.width-100[[![atlas susy exotics workshop](figures/atlas_susy_exotics_workshop.png)](https://pyhf.github.io/tutorial-ATLAS-SUSY-Exotics-2020/introduction.html)]
+]
+]
+
+---
+# Why do users choose us?
+
+.grid[
+.kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Out of all the toolkits, why do you think your users choose to use yours? <i class="fas fa-quote-right"></i>]
+.kol-1-1[
+- Easy to use and install: [pypi](https://pypi.org/project/pyhf/), [testpypi](https://test.pypi.org/project/pyhf/), [conda-forge](https://anaconda.org/conda-forge/pyhf), and [docker](https://hub.docker.com/r/pyhf/pyhf)
+- Fast code, fast development cycle, fast feedback
+- Well-documented python implementations
+- Command line complements the Pythonic API
+  - we really love our CLI, it plays nicely with shell "behavior" such as piping
+    ```
+    pyhf prune --sample ttbar BkgOnly.json | pyhf inspect
+    ```
+- Significant test-driven development (underlies all of our work) with 1000+ tests!
+  ```
+  $ pytest --collect-only | grep "<Function\|<Class" -c
+  1306
+  ```
+
+But we believe the biggest reason users choose `pyhf` is because
+
+.center.huge[`pyhf` is developed openly and freely]
+]
+]
+---
+# Common scripts/macros/functions?
+
+.grid[
+.kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Is your toolkit using some external packages / common scripts / macros / functions to perform some of the operations like fit, limit setting, significance computation, Asimov-creation, ranking plot? <i class="fas fa-quote-right"></i>]
+.kol-1-1[
+- fits, limit setting: scipy and minuit
+- test statistics are implemented in `pyhf`
+- Asimov creation: just a fit in `pyhf` to generate the Asimov dataset
+]
+]
+
+---
+# Common software for ATLAS?
+
+.grid[
+.kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Which pieces of your toolkit could be factorized out into a package that would be developed/supported/distributed by ATLAS? <i class="fas fa-quote-right"></i>]
+.kol-1-1[
+We don't necessarily believe any particular piece needs to be factorized out into a package maintained by ATLAS.
+- this is a python-only implementation of HistFactory (a mathematical model)
+- `pyhf` is a low-level tool to interact with the HistFactory JSON workspaces
+- higher-level tools are encouraged to build on top of `pyhf` to extend the functionality into plots, limit setting, and other debugging utilities
+]
+]
+
+---
+# Additional common software?
+
+.grid[
+.kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> What additional common software could your toolkit take advantage of? <i class="fas fa-quote-right"></i>]
+.kol-1-1[
+- not sure
+- we are willing to try out new ideas all the time
+- if you have ideas, get in [touch with us!](https://github.com/scikit-hep/pyhf/issues/new?template=feature-request.md)
+]
+]
 
 ---
 # Contributing to central toolkit?
 
-- Depends
-- Don't kludge it up dude
-
----
-# Points to add given last week's talks
-
-- Alex mentioned the importance of metadata
-- People keep focusing on plotting, so should make it clear that we can
-already interface with `cabinetry`
-- Stress the importance that things are already open
+.grid[
+.kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Would you be willing to contribute to the development of a centrally distributed toolkit that provides functionality for providing common statistical operations (e.g. calculating a p-value)? <i class="fas fa-quote-right"></i>]
+.kol-1-1[
+- we cannot make any promises at this time
+- all core developers are very busy with convener roles and contact roles in ATLAS
+]
+]
 
 ---
 # Summary
