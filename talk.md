@@ -70,9 +70,8 @@ Speakers should .bold[upload their slides 48h in advance] of the meeting
   - No dependence on ROOT!
 - Open source tool for all of HEP
    - [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported Scikit-HEP project
-   - Used for reinterpretation in phenomenology paper <br>(DOI: [10.1007/JHEP04(2019)144](https://inspirehep.net/record/1698425)) and `SModelS`
-   - Used in ATLAS SUSY groups and for internal pMSSM SUSY large scale reinterpretation
-   - Maybe your experiment too!
+   - Used for reinterpretation in phenomenology paper <br>(DOI: [10.1007/JHEP04(2019)144](https://inspirehep.net/record/1698425)) and [`SModelS`](https://smodels.github.io/) ([arXiv:2009.01809](https://arxiv.org/abs/2009.01809))
+   - Already in use by ATLAS SUSY groups, HH combination group, and for internal <br>pMSSM SUSY large scale reinterpretation
 ]
 .kol-1-3.center[
 .width-100[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://scikit-hep.org/pyhf/)]
@@ -164,9 +163,9 @@ We have lots of optional dependencies depending on what users want to do:
 - [Impact/ranking plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/ImpactPlot.ipynb)<sup>†</sup>
 - [pseudoexperiments ("toys")](https://scikit-hep.org/pyhf/examples/notebooks/toys.html) (upcoming `v0.6.0` release)
 
-.smaller[<sup>†</sup>Note: the `pyhf` API is meant to allow for higher-level frameworks to build on top, such as [cabinetry](https://github.com/alexander-held/cabinetry/).
+.smaller[<sup>†</sup>Note: the `pyhf` API is meant to allow for higher-level frameworks to build on top, such as [`cabinetry`](https://github.com/alexander-held/cabinetry/).
 - Missing a meta-language (DSL, metadata) that describes the data that can be passed to plotting utilities
-- `cabinetry` is meant to help with plotting things "correctly"
+- [`cabinetry`](https://github.com/alexander-held/cabinetry/) is meant to help with plotting things "correctly"
 - All of this work is openly developed with extensive feedback
 ]
 
@@ -264,7 +263,8 @@ But we believe the biggest reason users choose `pyhf` is because
 .grid[
 .kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Is your toolkit using some external packages / common scripts / macros / functions to perform some of the operations like fit, limit setting, significance computation, Asimov-creation, ranking plot? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
-- Fits, limit setting: scipy and minuit
+<br>
+- Fits, limit setting: SciPy and minuit
 - Test statistics are implemented in `pyhf`
 - Asimov creation: just a fit in `pyhf` to generate the Asimov dataset
 ]
@@ -276,9 +276,10 @@ But we believe the biggest reason users choose `pyhf` is because
 .grid[
 .kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Which pieces of your toolkit could be factorized out into a package that would be developed/supported/distributed by ATLAS? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
+<br>
 We don't necessarily believe any particular piece needs to be factorized out into a package maintained by ATLAS.
 - pure-Python implementation of HistFactory (a mathematical model)
-- `pyhf` is a low-level tool to interact with the HistFactory JSON workspaces
+- `pyhf` is a low(er)-level library to interact with the HistFactory JSON workspaces
 - Higher-level tools are encouraged to build on top of `pyhf` to extend the functionality into plots, limit setting, and other debugging utilities
    - c.f. [`cabinetry`](https://github.com/alexander-held/cabinetry) as excellent example
 ]
@@ -290,6 +291,7 @@ We don't necessarily believe any particular piece needs to be factorized out int
 .grid[
 .kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> What additional common software could your toolkit take advantage of? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
+<br>
 - Not sure
 - We are willing to try out new ideas all the time
 - If you have ideas, get in [touch with us!](https://github.com/scikit-hep/pyhf/issues/new?template=feature-request.md)
@@ -300,8 +302,9 @@ We don't necessarily believe any particular piece needs to be factorized out int
 # Contributing to central toolkit?
 
 .grid[
-.kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Would you be willing to contribute to the development of a centrally distributed toolkit that provides functionality for providing common statistical operations (e.g. calculating a p-value)? <i class="fas fa-quote-right"></i>]
+.kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Would you be willing to contribute to the development of a centrally distributed toolkit that provides functionality for providing common statistical operations (e.g. calculating a $p$-value)? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
+<br>
 - Cannot make any promises at this time
 - All core developers are very busy with convener roles and contact roles in ATLAS and IRIS-HEP
 ]
