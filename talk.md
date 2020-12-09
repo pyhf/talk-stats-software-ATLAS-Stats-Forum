@@ -233,20 +233,20 @@ Most recently gave a successful, in-depth tutorial at the ATLAS SUSY+Exotics wor
 .kol-1-1[
 - Easy to use and install: [PyPI](https://pypi.org/project/pyhf/), [TestPyPI](https://test.pypi.org/project/pyhf/), [conda-forge](https://anaconda.org/conda-forge/pyhf), and [Docker](https://hub.docker.com/r/pyhf/pyhf)
 - Fast code, fast development cycle, fast feedback
-- Well-documented Python implementations
+- Well-documented Python implementations, clear communication channels to devs and community
 - Command line complements the Pythonic API
   - We really love our CLI, it plays nicely with shell "behavior" such as piping
     ```
-    pyhf prune --sample ttbar BkgOnly.json | pyhf inspect
+    $ pyhf prune --sample ttbar BkgOnly.json | pyhf inspect
     ```
-- Significant test-driven development (underlies all of our work) with 1000+ tests across Python 3.X runtimes!
+- Significant test-driven development (underlies all of our work) with 1000+ tests!
   ```
   $ pytest --collect-only | grep "<Function\|<Class" -c
   1306
   ```
+- Every commit tested in CI across Python 3.6, 3.7, 3.8 on Linux and MacOS systems with nightlies [![CI/CD](https://github.com/scikit-hep/pyhf/workflows/CI/CD/badge.svg)](https://github.com/scikit-hep/pyhf/actions?query=workflow%3ACI%2FCD)
 
 But we believe the biggest reason users choose `pyhf` is because
-
 .center.huge[`pyhf` is developed openly and freely]
 ]
 ]
