@@ -69,7 +69,7 @@ Speakers should .bold[upload their slides 48h in advance] of the meeting
   - [`$ pip install pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
   - No dependence on ROOT!
 - Open source tool for all of HEP
-   - [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported Scikit-HEP project
+   - [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported [Scikit-HEP project](https://scikit-hep.org/)
    - Used for reinterpretation in phenomenology paper <br>(DOI: [10.1007/JHEP04(2019)144](https://inspirehep.net/record/1698425)) and [`SModelS`](https://smodels.github.io/) ([arXiv:2009.01809](https://arxiv.org/abs/2009.01809))
    - Already in use by ATLAS SUSY groups, HH combination group, and for internal <br>pMSSM SUSY large scale reinterpretation
 ]
