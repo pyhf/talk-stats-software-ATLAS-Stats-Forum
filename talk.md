@@ -79,48 +79,41 @@ Speakers should .bold[upload their slides 48h in advance] of the meeting
 ]
 
 ---
-# External dependencies
+# Dependencies
 
-Required dependencies from our `setup.cfg`:
+.kol-1-2[
+## Required dependencies
 
-.grid[
-.kol-2-3[
-```
-install_requires =
-    scipy>=1.4.0
-    click>=6.0
-    tqdm
-    jsonschema>=3.2.0
-    jsonpatch
-    pyyaml
-```
+[Core libraries](https://github.com/scikit-hep/pyhf/blob/0370dbd5d728b2be90bab95c020ca85b384657b8/setup.cfg#L40-L46) (though all lightweight installs):
 
 - [SciPy](https://www.scipy.org/) - Scientific Python (optimization routines)
 - [click](https://click.palletsprojects.com/) - Command line interface
 - [tqdm](https://tqdm.github.io/) - Progress bars
 - [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/) - HistFactory JSON specification
 - [jsonpatch](https://python-json-patch.readthedocs.io/en/latest/) - Signal reinterpretation
-- [pyyaml](https://github.com/yaml/pyyaml) - Command line niceties
+- [PyYAML](https://github.com/yaml/pyyaml) - Command line niceties
 ]
-.kol-1-3.center[
-.width-50[![scipy logo](figures/logos/SciPy_logo.png)]
-<br /><br /><br />
-.width-50[![click logo](figures/logos/click_logo.png)]
-<br /><br />
-.width-25[![tqdm logo](figures/logos/tqdm_logo.gif)]
-]
-]
+.kol-1-2[
+## Optional dependencies
 
----
-# Optional dependencies
-
-We have lots of optional dependencies depending on what users want to do:
+Depending on what users want to do:
 
 - [TensorFlow](https://www.tensorflow.org/) - autodiff
 - [Pytorch](https://pytorch.org/) - autodiff
 - [JAX](https://jax.readthedocs.io/en/latest/) - autodiff, jit
 - [iminuit](https://scikit-hep.org/iminuit) - alternative minimizer choice
-- [uproot](https://uproot.readthedocs.io/)
+- [uproot](https://uproot.readthedocs.io/) - ROOT I/O interop
+]
+
+.kol-1-1[
+Getting "extras" is easy:
+
+```
+$ python -m pip install --upgrade pyhf[xmlio] # Gets uproot
+$ python -m pip install --upgrade pyhf[backends] # Gets all backends
+$ python -m pip install --upgrade pyhf[jax,xmlio,minuit] # Gets JAX, uproot, and iminuit
+```
+]
 
 ---
 # Open Source Industry Tools for Computation
@@ -363,6 +356,50 @@ class: middle
 class: end-slide, center
 
 .large[Backup]
+
+---
+# External dependencies
+
+Required dependencies from our `setup.cfg`:
+
+.grid[
+.kol-2-3[
+```
+install_requires =
+    scipy>=1.4.0
+    click>=6.0
+    tqdm
+    jsonschema>=3.2.0
+    jsonpatch
+    pyyaml
+```
+
+- [SciPy](https://www.scipy.org/) - Scientific Python (optimization routines)
+- [click](https://click.palletsprojects.com/) - Command line interface
+- [tqdm](https://tqdm.github.io/) - Progress bars
+- [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/) - HistFactory JSON specification
+- [jsonpatch](https://python-json-patch.readthedocs.io/en/latest/) - Signal reinterpretation
+- [pyyaml](https://github.com/yaml/pyyaml) - Command line niceties
+]
+.kol-1-3.center[
+.width-50[![scipy logo](figures/logos/SciPy_logo.png)]
+<br /><br /><br />
+.width-50[![click logo](figures/logos/click_logo.png)]
+<br /><br />
+.width-25[![tqdm logo](figures/logos/tqdm_logo.gif)]
+]
+]
+
+---
+# Optional dependencies
+
+We have lots of optional dependencies depending on what users want to do:
+
+- [TensorFlow](https://www.tensorflow.org/) - autodiff
+- [Pytorch](https://pytorch.org/) - autodiff
+- [JAX](https://jax.readthedocs.io/en/latest/) - autodiff, jit
+- [iminuit](https://scikit-hep.org/iminuit) - alternative minimizer choice
+- [uproot](https://uproot.readthedocs.io/) - ROOT I/O interop
 
 ---
 # HistFactory Model
