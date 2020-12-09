@@ -96,12 +96,12 @@ install_requires =
     pyyaml
 ```
 
-- [SciPy](https://www.scipy.org/) - scientific python (optimization routines)
-- [click](https://click.palletsprojects.com/) - command line interface
-- [tqdm](https://tqdm.github.io/) - we love progress bars
+- [SciPy](https://www.scipy.org/) - Scientific Python (optimization routines)
+- [click](https://click.palletsprojects.com/) - Command line interface
+- [tqdm](https://tqdm.github.io/) - Progress bars
 - [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/) - HistFactory JSON specification
-- [jsonpatch](https://python-json-patch.readthedocs.io/en/latest/) - signal reinterpretation
-- [pyyaml](https://github.com/yaml/pyyaml) - additional command line niceties
+- [jsonpatch](https://python-json-patch.readthedocs.io/en/latest/) - Signal reinterpretation
+- [pyyaml](https://github.com/yaml/pyyaml) - Command line niceties
 ]
 .kol-1-3.center[
 .width-50[![scipy logo](figures/logos/SciPy_logo.png)]
@@ -117,9 +117,9 @@ install_requires =
 
 We have lots of optional dependencies depending on what users want to do:
 
-- [tensorflow](https://www.tensorflow.org/) - autodiff
-- [torch](https://pytorch.org/) - autodiff
-- [jax](https://jax.readthedocs.io/en/latest/) - autodiff, jit
+- [TensorFlow](https://www.tensorflow.org/) - autodiff
+- [Pytorch](https://pytorch.org/) - autodiff
+- [JAX](https://jax.readthedocs.io/en/latest/) - autodiff, jit
 - [iminuit](https://scikit-hep.org/iminuit) - alternative minimizer choice
 - [uproot](https://uproot.readthedocs.io/)
 
@@ -155,19 +155,19 @@ We have lots of optional dependencies depending on what users want to do:
 ---
 # Current Features
 
-- [unconstrained](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fit.html) and [constrained fits](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fixed_poi_fit.html)
-- [exclusion fits](https://scikit-hep.org/pyhf/examples/notebooks/hello-world.html)
-- (coming soon) [discovery fits](https://github.com/scikit-hep/pyhf/pull/520)
-- [conversion to/from XML+ROOT to JSON](https://scikit-hep.org/pyhf/babel.html) (HistFitter and TRExFitter supported!)
-- [brazil bands](https://scikit-hep.org/pyhf/examples/notebooks/binderexample/StatisticalAnalysis.html)
-- [pull plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/pullplot.ipynb)<sup>†</sup>
-- [impact/ranking plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/ImpactPlot.ipynb)<sup>†</sup>
-- [pseudoexperiments ("toys")](https://scikit-hep.org/pyhf/examples/notebooks/toys.html)
+- [Unconstrained](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fit.html) and [constrained fits](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fixed_poi_fit.html)
+- [Exclusion fits](https://scikit-hep.org/pyhf/examples/notebooks/hello-world.html)
+- [Discovery fits](https://github.com/scikit-hep/pyhf/pull/520) (upcoming `v0.6.0` release)
+- [Conversion to/from XML+ROOT to JSON](https://scikit-hep.org/pyhf/babel.html) (HistFitter and TRExFitter supported!)
+- [Brazil bands](https://scikit-hep.org/pyhf/examples/notebooks/binderexample/StatisticalAnalysis.html)
+- [Pull plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/pullplot.ipynb)<sup>†</sup>
+- [Impact/ranking plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/ImpactPlot.ipynb)<sup>†</sup>
+- [pseudoexperiments ("toys")](https://scikit-hep.org/pyhf/examples/notebooks/toys.html) (upcoming `v0.6.0` release)
 
 .smaller[<sup>†</sup>Note: the `pyhf` API is meant to allow for higher-level frameworks to build on top, such as [cabinetry](https://github.com/alexander-held/cabinetry/).
-- missing a meta-language (DSL, metadata) that describes the data that can be passed to plotting utilities
+- Missing a meta-language (DSL, metadata) that describes the data that can be passed to plotting utilities
 - `cabinetry` is meant to help with plotting things "correctly"
-- all of this work is openly developed with extensive feedback
+- All of this work is openly developed with extensive feedback
 ]
 
 See our [<i class="fas fa-road"></i> roadmap](https://scikit-hep.org/pyhf/governance/ROADMAP.html) to get an idea of where we're going!
@@ -215,15 +215,15 @@ $$
 .kol-1-2[
 In this documentation you can find a list of:
 
-- [presentations](https://scikit-hep.org/pyhf/outreach.html#presentations),
-- [tutorials](https://scikit-hep.org/pyhf/outreach.html#tutorials),
-- [posters](https://scikit-hep.org/pyhf/outreach.html#posters), and
-- [media outreach](https://scikit-hep.org/pyhf/outreach.html#in-the-media).
+- [Presentations](https://scikit-hep.org/pyhf/outreach.html#presentations)
+- [Tutorials](https://scikit-hep.org/pyhf/outreach.html#tutorials)
+- [Posters](https://scikit-hep.org/pyhf/outreach.html#posters)
+- [Media outreach](https://scikit-hep.org/pyhf/outreach.html#in-the-media)
 
 All of our documentation is tested nightly, against our software, as well as updates to software and tools we depend on. In addition to this, we've made full use of:
 
-- [sphinx](https://www.sphinx-doc.org/en/master/) - main documentation
-- [jupyter](https://jupyter.org/) - fundamentals and tutorials
+- [Sphinx](https://www.sphinx-doc.org/en/master/) - main documentation
+- [Jupyter](https://jupyter.org/) - fundamentals and tutorials
 
 ]
 .kol-1-2[
@@ -239,15 +239,15 @@ Most recently gave a successful, in-depth tutorial at the ATLAS SUSY+Exotics wor
 .grid[
 .kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Out of all the toolkits, why do you think your users choose to use yours? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
-- Easy to use and install: [pypi](https://pypi.org/project/pyhf/), [testpypi](https://test.pypi.org/project/pyhf/), [conda-forge](https://anaconda.org/conda-forge/pyhf), and [docker](https://hub.docker.com/r/pyhf/pyhf)
+- Easy to use and install: [PyPI](https://pypi.org/project/pyhf/), [TestPyPI](https://test.pypi.org/project/pyhf/), [conda-forge](https://anaconda.org/conda-forge/pyhf), and [Docker](https://hub.docker.com/r/pyhf/pyhf)
 - Fast code, fast development cycle, fast feedback
-- Well-documented python implementations
+- Well-documented Python implementations
 - Command line complements the Pythonic API
-  - we really love our CLI, it plays nicely with shell "behavior" such as piping
+  - We really love our CLI, it plays nicely with shell "behavior" such as piping
     ```
     pyhf prune --sample ttbar BkgOnly.json | pyhf inspect
     ```
-- Significant test-driven development (underlies all of our work) with 1000+ tests!
+- Significant test-driven development (underlies all of our work) with 1000+ tests across Python 3.X runtimes!
   ```
   $ pytest --collect-only | grep "<Function\|<Class" -c
   1306
@@ -264,8 +264,8 @@ But we believe the biggest reason users choose `pyhf` is because
 .grid[
 .kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Is your toolkit using some external packages / common scripts / macros / functions to perform some of the operations like fit, limit setting, significance computation, Asimov-creation, ranking plot? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
-- fits, limit setting: scipy and minuit
-- test statistics are implemented in `pyhf`
+- Fits, limit setting: scipy and minuit
+- Test statistics are implemented in `pyhf`
 - Asimov creation: just a fit in `pyhf` to generate the Asimov dataset
 ]
 ]
@@ -277,9 +277,10 @@ But we believe the biggest reason users choose `pyhf` is because
 .kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Which pieces of your toolkit could be factorized out into a package that would be developed/supported/distributed by ATLAS? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
 We don't necessarily believe any particular piece needs to be factorized out into a package maintained by ATLAS.
-- this is a python-only implementation of HistFactory (a mathematical model)
+- pure-Python implementation of HistFactory (a mathematical model)
 - `pyhf` is a low-level tool to interact with the HistFactory JSON workspaces
-- higher-level tools are encouraged to build on top of `pyhf` to extend the functionality into plots, limit setting, and other debugging utilities
+- Higher-level tools are encouraged to build on top of `pyhf` to extend the functionality into plots, limit setting, and other debugging utilities
+   - c.f. [`cabinetry`](https://github.com/alexander-held/cabinetry) as excellent example
 ]
 ]
 
@@ -289,9 +290,9 @@ We don't necessarily believe any particular piece needs to be factorized out int
 .grid[
 .kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> What additional common software could your toolkit take advantage of? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
-- not sure
-- we are willing to try out new ideas all the time
-- if you have ideas, get in [touch with us!](https://github.com/scikit-hep/pyhf/issues/new?template=feature-request.md)
+- Not sure
+- We are willing to try out new ideas all the time
+- If you have ideas, get in [touch with us!](https://github.com/scikit-hep/pyhf/issues/new?template=feature-request.md)
 ]
 ]
 
@@ -301,8 +302,8 @@ We don't necessarily believe any particular piece needs to be factorized out int
 .grid[
 .kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Would you be willing to contribute to the development of a centrally distributed toolkit that provides functionality for providing common statistical operations (e.g. calculating a p-value)? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
-- we cannot make any promises at this time
-- all core developers are very busy with convener roles and contact roles in ATLAS
+- Cannot make any promises at this time
+- All core developers are very busy with convener roles and contact roles in ATLAS and IRIS-HEP
 ]
 ]
 
