@@ -59,62 +59,6 @@ UCSC SCIPP
 Speakers should .bold[upload their slides 48h in advance] of the meeting
 
 ---
-# HistFactory Model
-
-- A flexible probability density function (p.d.f.) template to build statistical models in high energy physics
-- Developed in 2011 during work that lead to the Higgs discovery [[CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)]
-- Widely used by the HEP community for .bold[measurements of known physics] (Standard Model) and<br> .bold[searches for new physics] (beyond the Standard Model)
-
-.kol-2-5.center[
-.width-90[[![HIGG-2016-25](figures/HIGG-2016-25.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2016-25/)]
-.bold[Standard Model]
-]
-.kol-3-5.center[
-.width-100[[![SUSY-2016-16](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
-.bold[Beyond the Standard Model]
-]
-
----
-# HistFactory Template
-
-$$
-f\left(\mathrm{data}\middle|\mathrm{parameters}\right) =  f\left(\vec{n}, \vec{a}\middle|\vec{\eta}, \vec{\chi}\right) = \color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \prod\_{b \\,\in\\, \textrm{bins}\_c} \textrm{Pois} \left(n\_{cb} \middle| \nu\_{cb}\left(\vec{\eta}, \vec{\chi}\right)\right)} \\,\color{red}{\prod\_{\chi \\,\in\\, \vec{\chi}} c\_{\chi} \left(a\_{\chi}\middle|\chi\right)}
-$$
-
-.bold[Use:] Multiple disjoint _channels_ (or regions) of binned distributions with multiple _samples_ contributing to each with additional (possibly shared) systematics between sample estimates
-
-.kol-1-2[
-.bold[Main pieces:]
-- .blue[Main Poisson p.d.f. for simultaneous measurement of multiple channels]
-- .katex[Event rates] $\nu\_{cb}$ (nominal rate $\nu\_{scb}^{0}$ with rate modifiers)
-- .red[Constraint p.d.f. (+ data) for "auxiliary measurements"]
-   - encode systematic uncertainties (e.g. normalization, shape)
-- $\vec{n}$: events, $\vec{a}$: auxiliary data, $\vec{\eta}$: unconstrained pars, $\vec{\chi}$: constrained pars
-]
-.kol-1-2[
-.center.width-100[[![SUSY-2016-16_annotated](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
-.center[Example: .bold[Each bin] is separate (1-bin) _channel_,<br> each .bold[histogram] (color) is a _sample_ and share<br> a .bold[normalization systematic] uncertainty]
-]
-
----
-# HistFactory Template
-
-$$
-f\left(\vec{n}, \vec{a}\middle|\vec{\eta}, \vec{\chi}\right) = \color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \prod\_{b \\,\in\\, \textrm{bins}\_c} \textrm{Pois} \left(n\_{cb} \middle| \nu\_{cb}\left(\vec{\eta}, \vec{\chi}\right)\right)} \\,\color{red}{\prod\_{\chi \\,\in\\, \vec{\chi}} c\_{\chi} \left(a\_{\chi}\middle|\chi\right)}
-$$
-
-<br>
-Mathematical grammar for a simultaneous fit with
-
-- .blue[multiple "channels"] (analysis regions, (stacks of) histograms)
-- each region can have .blue[multiple bins]
-- coupled to a set of .red[constraint terms]
-
-<br>
-.center[.bold[This is a _mathematical_ representation!] Nowhere is any software spec defined]
-.center[.bold[Until recently] (2018), the only implementation of HistFactory has been in [`ROOT`](https://root.cern.ch/)]
-
----
 # `pyhf`: HistFactory in pure Python
 
 .kol-2-3[
@@ -200,6 +144,25 @@ $$
 .bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
 
 ---
+# Current Features
+
+- [conversion to/from XML+ROOT to JSON (HistFitter and TRExFitter supported!)](https://scikit-hep.org/pyhf/babel.html)
+- [brazil bands](https://scikit-hep.org/pyhf/examples/notebooks/binderexample/StatisticalAnalysis.html)
+- [pull plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/pullplot.ipynb)†
+- [impact/ranking plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/ImpactPlot.ipynb)†
+- [pseudoexperiments ("toys")](https://scikit-hep.org/pyhf/examples/notebooks/toys.html)
+- [exclusion fits](https://scikit-hep.org/pyhf/examples/notebooks/hello-world.html)
+- [(coming soon) discovery fits](https://github.com/scikit-hep/pyhf/pull/520)
+
+.smaller[†Note: the `pyhf` API is meant to allow for higher-level frameworks to build on top, such as [cabinetry](https://github.com/alexander-held/cabinetry/).
+- missing a meta-language (DSL, metadata) that describes the data that can be passed to plotting utilities
+- `cabinetry` is meant to help with plotting things "correctly"
+- all of this work is openly developed with extensive feedback
+]
+
+See our [<i class="fas fa-road"></i> roadmap](https://scikit-hep.org/pyhf/governance/ROADMAP.html) to get an idea of where we're going!
+
+---
 # attractiveness to users
 
 - Slide
@@ -272,10 +235,10 @@ install_requires =
 
 We have lots of optional dependencies depending on what users want to do:
 
-- [tensorflow](https://www.tensorflow.org/)
-- [torch](https://pytorch.org/)
-- [jax](https://jax.readthedocs.io/en/latest/)
-- [iminuit](https://scikit-hep.org/iminuit)
+- [tensorflow](https://www.tensorflow.org/) - autodiff
+- [torch](https://pytorch.org/) - autodiff
+- [jax](https://jax.readthedocs.io/en/latest/) - autodiff, jit
+- [iminuit](https://scikit-hep.org/iminuit) - alternative minimizer choice
 - [uproot](https://uproot.readthedocs.io/)
 
 ---
@@ -354,7 +317,63 @@ class: middle
 ---
 class: end-slide, center
 
-Backup
+.large[Backup]
+
+---
+# HistFactory Model
+
+- A flexible probability density function (p.d.f.) template to build statistical models in high energy physics
+- Developed in 2011 during work that lead to the Higgs discovery [[CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)]
+- Widely used by the HEP community for .bold[measurements of known physics] (Standard Model) and<br> .bold[searches for new physics] (beyond the Standard Model)
+
+.kol-2-5.center[
+.width-90[[![HIGG-2016-25](figures/HIGG-2016-25.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2016-25/)]
+.bold[Standard Model]
+]
+.kol-3-5.center[
+.width-100[[![SUSY-2016-16](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
+.bold[Beyond the Standard Model]
+]
+
+---
+# HistFactory Template
+
+$$
+f\left(\mathrm{data}\middle|\mathrm{parameters}\right) =  f\left(\vec{n}, \vec{a}\middle|\vec{\eta}, \vec{\chi}\right) = \color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \prod\_{b \\,\in\\, \textrm{bins}\_c} \textrm{Pois} \left(n\_{cb} \middle| \nu\_{cb}\left(\vec{\eta}, \vec{\chi}\right)\right)} \\,\color{red}{\prod\_{\chi \\,\in\\, \vec{\chi}} c\_{\chi} \left(a\_{\chi}\middle|\chi\right)}
+$$
+
+.bold[Use:] Multiple disjoint _channels_ (or regions) of binned distributions with multiple _samples_ contributing to each with additional (possibly shared) systematics between sample estimates
+
+.kol-1-2[
+.bold[Main pieces:]
+- .blue[Main Poisson p.d.f. for simultaneous measurement of multiple channels]
+- .katex[Event rates] $\nu\_{cb}$ (nominal rate $\nu\_{scb}^{0}$ with rate modifiers)
+- .red[Constraint p.d.f. (+ data) for "auxiliary measurements"]
+   - encode systematic uncertainties (e.g. normalization, shape)
+- $\vec{n}$: events, $\vec{a}$: auxiliary data, $\vec{\eta}$: unconstrained pars, $\vec{\chi}$: constrained pars
+]
+.kol-1-2[
+.center.width-100[[![SUSY-2016-16_annotated](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
+.center[Example: .bold[Each bin] is separate (1-bin) _channel_,<br> each .bold[histogram] (color) is a _sample_ and share<br> a .bold[normalization systematic] uncertainty]
+]
+
+---
+# HistFactory Template
+
+$$
+f\left(\vec{n}, \vec{a}\middle|\vec{\eta}, \vec{\chi}\right) = \color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \prod\_{b \\,\in\\, \textrm{bins}\_c} \textrm{Pois} \left(n\_{cb} \middle| \nu\_{cb}\left(\vec{\eta}, \vec{\chi}\right)\right)} \\,\color{red}{\prod\_{\chi \\,\in\\, \vec{\chi}} c\_{\chi} \left(a\_{\chi}\middle|\chi\right)}
+$$
+
+<br>
+Mathematical grammar for a simultaneous fit with
+
+- .blue[multiple "channels"] (analysis regions, (stacks of) histograms)
+- each region can have .blue[multiple bins]
+- coupled to a set of .red[constraint terms]
+
+<br>
+.center[.bold[This is a _mathematical_ representation!] Nowhere is any software spec defined]
+.center[.bold[Until recently] (2018), the only implementation of HistFactory has been in [`ROOT`](https://root.cern.ch/)]
 
 ---
 # HistFactory Template (in more detail)
