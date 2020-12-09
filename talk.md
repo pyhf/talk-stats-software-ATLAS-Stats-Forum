@@ -98,9 +98,9 @@ Speakers should .bold[upload their slides 48h in advance] of the meeting
 
 Depending on what users want to do:
 
-- [TensorFlow](https://www.tensorflow.org/) - autodiff
-- [Pytorch](https://pytorch.org/) - autodiff
-- [JAX](https://jax.readthedocs.io/en/latest/) - autodiff, jit
+- [TensorFlow](https://www.tensorflow.org/) - autodiff, GPUs
+- [PyTorch](https://pytorch.org/) - autodiff, GPUs
+- [JAX](https://jax.readthedocs.io/en/latest/) - autodiff, GPUs, jit
 - [iminuit](https://scikit-hep.org/iminuit) - alternative minimizer choice
 - [uproot](https://uproot.readthedocs.io/) - ROOT I/O interop
 ]
@@ -396,7 +396,7 @@ install_requires =
 We have lots of optional dependencies depending on what users want to do:
 
 - [TensorFlow](https://www.tensorflow.org/) - autodiff
-- [Pytorch](https://pytorch.org/) - autodiff
+- [PyTorch](https://pytorch.org/) - autodiff
 - [JAX](https://jax.readthedocs.io/en/latest/) - autodiff, jit
 - [iminuit](https://scikit-hep.org/iminuit) - alternative minimizer choice
 - [uproot](https://uproot.readthedocs.io/) - ROOT I/O interop
