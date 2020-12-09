@@ -149,12 +149,12 @@ $ python -m pip install --upgrade pyhf[jax,xmlio,minuit] # Gets JAX, uproot, and
 
 - [Unconstrained](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fit.html) and [constrained fits](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fixed_poi_fit.html)
 - [Exclusion fits](https://scikit-hep.org/pyhf/examples/notebooks/hello-world.html)
-- [Discovery fits](https://github.com/scikit-hep/pyhf/pull/520) (upcoming `v0.6.0` release)
+- [Discovery fits](https://github.com/scikit-hep/pyhf/pull/520) (imminent `v0.6.0` release)
 - [Conversion to/from XML+ROOT to JSON](https://scikit-hep.org/pyhf/babel.html) (HistFitter and TRExFitter supported!)
 - [Brazil bands](https://scikit-hep.org/pyhf/examples/notebooks/binderexample/StatisticalAnalysis.html)
 - [Pull plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/pullplot.ipynb)<sup>†</sup>
 - [Impact/ranking plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/ImpactPlot.ipynb)<sup>†</sup>
-- [pseudoexperiments ("toys")](https://scikit-hep.org/pyhf/examples/notebooks/toys.html) (upcoming `v0.6.0` release)
+- [pseudoexperiments ("toys")](https://scikit-hep.org/pyhf/examples/notebooks/toys.html) (imminent `v0.6.0` release)
 
 .smaller[<sup>†</sup>Note: the `pyhf` API is meant to allow for higher-level frameworks to build on top, such as [`cabinetry`](https://github.com/alexander-held/cabinetry/).
 - Missing a meta-language (DSL, metadata) that describes the data that can be passed to plotting utilities
