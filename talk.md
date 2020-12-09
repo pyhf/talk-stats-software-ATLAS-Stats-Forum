@@ -5,10 +5,10 @@ count: false
 
 <br>
 
-.huge[Lukas Heinrich], .huge.blue[Matthew Feickert], .huge[Giordon Stark]<br><br>
-.huge[(University of Illinois at Urbana-Champaign)]
+.huge[Lukas Heinrich], .huge[Matthew Feickert], .huge.blue[Giordon Stark]<br><br>
+.huge[(SCIPP, UC Santa Cruz)]
 <br><br>
-[matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
+[gstark@cern.ch](mailto:gstark@cern.ch)
 
 [ATLAS Statistics Forum](https://indico.cern.ch/event/979145/#6-pyhf-10-5)
 
@@ -59,9 +59,145 @@ UCSC SCIPP
 Speakers should .bold[upload their slides 48h in advance] of the meeting
 
 ---
-# `pyhf` functionality
+# HistFactory Model
 
-- Slide
+- A flexible probability density function (p.d.f.) template to build statistical models in high energy physics
+- Developed in 2011 during work that lead to the Higgs discovery [[CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)]
+- Widely used by the HEP community for .bold[measurements of known physics] (Standard Model) and<br> .bold[searches for new physics] (beyond the Standard Model)
+
+.kol-2-5.center[
+.width-90[[![HIGG-2016-25](figures/HIGG-2016-25.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2016-25/)]
+.bold[Standard Model]
+]
+.kol-3-5.center[
+.width-100[[![SUSY-2016-16](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
+.bold[Beyond the Standard Model]
+]
+
+---
+# HistFactory Template
+
+$$
+f\left(\mathrm{data}\middle|\mathrm{parameters}\right) =  f\left(\vec{n}, \vec{a}\middle|\vec{\eta}, \vec{\chi}\right) = \color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \prod\_{b \\,\in\\, \textrm{bins}\_c} \textrm{Pois} \left(n\_{cb} \middle| \nu\_{cb}\left(\vec{\eta}, \vec{\chi}\right)\right)} \\,\color{red}{\prod\_{\chi \\,\in\\, \vec{\chi}} c\_{\chi} \left(a\_{\chi}\middle|\chi\right)}
+$$
+
+.bold[Use:] Multiple disjoint _channels_ (or regions) of binned distributions with multiple _samples_ contributing to each with additional (possibly shared) systematics between sample estimates
+
+.kol-1-2[
+.bold[Main pieces:]
+- .blue[Main Poisson p.d.f. for simultaneous measurement of multiple channels]
+- .katex[Event rates] $\nu\_{cb}$ (nominal rate $\nu\_{scb}^{0}$ with rate modifiers)
+- .red[Constraint p.d.f. (+ data) for "auxiliary measurements"]
+   - encode systematic uncertainties (e.g. normalization, shape)
+- $\vec{n}$: events, $\vec{a}$: auxiliary data, $\vec{\eta}$: unconstrained pars, $\vec{\chi}$: constrained pars
+]
+.kol-1-2[
+.center.width-100[[![SUSY-2016-16_annotated](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
+.center[Example: .bold[Each bin] is separate (1-bin) _channel_,<br> each .bold[histogram] (color) is a _sample_ and share<br> a .bold[normalization systematic] uncertainty]
+]
+
+---
+# HistFactory Template
+
+$$
+f\left(\vec{n}, \vec{a}\middle|\vec{\eta}, \vec{\chi}\right) = \color{blue}{\prod\_{c \\,\in\\, \textrm{channels}} \prod\_{b \\,\in\\, \textrm{bins}\_c} \textrm{Pois} \left(n\_{cb} \middle| \nu\_{cb}\left(\vec{\eta}, \vec{\chi}\right)\right)} \\,\color{red}{\prod\_{\chi \\,\in\\, \vec{\chi}} c\_{\chi} \left(a\_{\chi}\middle|\chi\right)}
+$$
+
+<br>
+Mathematical grammar for a simultaneous fit with
+
+- .blue[multiple "channels"] (analysis regions, (stacks of) histograms)
+- each region can have .blue[multiple bins]
+- coupled to a set of .red[constraint terms]
+
+<br>
+.center[.bold[This is a _mathematical_ representation!] Nowhere is any software spec defined]
+.center[.bold[Until recently] (2018), the only implementation of HistFactory has been in [`ROOT`](https://root.cern.ch/)]
+
+---
+# `pyhf`: HistFactory in pure Python
+
+.kol-2-3[
+<br>
+- First non-ROOT implementation of the HistFactory p.d.f. template
+   - .width-50[[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1169739.svg)](https://doi.org/10.5281/zenodo.1169739)]
+- pure-Python library with Python and CLI API
+  - [`$ pip install pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
+  - No dependence on ROOT!
+- Open source tool for all of HEP
+   - [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported Scikit-HEP project
+   - Used for reinterpretation in phenomenology paper <br>(DOI: [10.1007/JHEP04(2019)144](https://inspirehep.net/record/1698425)) and `SModelS`
+   - Used in ATLAS SUSY groups and for internal pMSSM SUSY large scale reinterpretation
+   - Maybe your experiment too!
+]
+.kol-1-3.center[
+.width-100[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://scikit-hep.org/pyhf/)]
+.width-100[[![pyhf_PyPI](figures/pyhf_PyPI.png)](https://pypi.org/project/pyhf/)]
+]
+
+---
+# Open Source Industry Tools for Computation
+
+.grid[
+.kol-2-3[
+- All numerical operations implemented in .bold[tensor backends] through an API of $n$-dimensional array operations
+- Using deep learning frameworks as computational backends allows for .bold[exploitation of autodiff and GPU acceleration]
+- As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers (physicists are not)
+
+.kol-1-2.center[
+.width-90[![scaling_hardware](figures/scaling_hardware_annotated.png)]
+]
+.kol-1-2[
+<br>
+- Show hardware acceleration giving .bold[order of magnitude speedup] for some models!
+- Improvements over traditional
+   - 10 hrs to 30 min; 20 min to 10 sec
+]
+]
+.kol-1-4.center[
+.width-85[![NumPy](figures/logos/NumPy_logo.svg)]
+.width-85[![PyTorch](figures/logos/Pytorch_logo.svg)]
+.width-85[![Tensorflow](figures/logos/TensorFlow_logo.svg)]
+
+<br>
+.width-50[![JAX](figures/logos/JAX_logo.png)]
+]
+]
+
+---
+# Automatic Differentiation of `pyhf` Models
+
+With tensor library backends gain access to _exact (higher order) derivatives_ &mdash; accuracy is only limited by floating point precision
+
+$$
+\frac{\partial L}{\partial \mu}, \frac{\partial L}{\partial \theta_{i}}
+$$
+
+.grid[
+.kol-1-2[
+.large[Exploit .bold[full gradient of the likelihood] with .bold[modern optimizers] to help speedup fit!]
+
+<br><br>
+.large[Gain this through the frameworks creating _computational directed acyclic graphs_ and then applying the chain rule (to the operations)]
+]
+.kol-1-2[
+.center.width-80[![DAG](figures/computational_graph.png)]
+]
+]
+
+---
+# HEP Example: Likelihood Gradients
+
+.footnote[Example adapted from [Lukas Heinrich's PyHEP 2020 tutorial](https://indico.cern.ch/event/882824/timetable/#45-introduction-to-automatic-d)]
+
+.kol-1-2.center[
+.width-90[![carbon_plot_MLE_grads](figures/carbon_plot_MLE_grads.png)]
+]
+.kol-1-2.center[
+.width-90[![MLE_grad_map_full](figures/MLE_grad_map.png)]
+]
+
+.bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
 
 ---
 # attractiveness to users
@@ -75,12 +211,72 @@ Speakers should .bold[upload their slides 48h in advance] of the meeting
 ---
 # documentation, development, and user interactions
 
-- Slide
+.grid[
+.kol-1-1.center[All documentation can be found at [https://scikit-hep.org/pyhf/](https://scikit-hep.org/pyhf/).]
+.kol-1-2[
+In this documentation you can find a list of:
+
+- [presentations](https://scikit-hep.org/pyhf/outreach.html#presentations),
+- [tutorials](https://scikit-hep.org/pyhf/outreach.html#tutorials),
+- [posters](https://scikit-hep.org/pyhf/outreach.html#posters), and
+- [media outreach](https://scikit-hep.org/pyhf/outreach.html#in-the-media).
+
+All of our documentation is tested nightly, against our software, as well as updates to software and tools we depend on. In addition to this, we've made full use of:
+
+- [sphinx](https://www.sphinx-doc.org/en/master/) - main documentation
+- [jupyter](https://jupyter.org/) - fundamentals and tutorials
+
+]
+.kol-1-2[
+Most recently gave a successful, in-depth tutorial at the ATLAS SUSY+Exotics workshop.
+
+.width-100[[![atlas susy exotics workshop](figures/atlas_susy_exotics_workshop.png)](https://pyhf.github.io/tutorial-ATLAS-SUSY-Exotics-2020/introduction.html)]
+]
+]
 
 ---
 # External dependencies
 
-- Ever heard of the SciPy stack brah?
+Required dependencies from our `setup.cfg`:
+
+.grid[
+.kol-2-3[
+```
+install_requires =
+    scipy>=1.4.0
+    click>=6.0
+    tqdm
+    jsonschema>=3.2.0
+    jsonpatch
+    pyyaml
+```
+
+- [SciPy](https://www.scipy.org/) - scientific python (optimization routines)
+- [click](https://click.palletsprojects.com/) - command line interface
+- [tqdm](https://tqdm.github.io/) - we love progress bars
+- [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/) - HistFactory JSON specification
+- [jsonpatch](https://python-json-patch.readthedocs.io/en/latest/) - signal reinterpretation
+- [pyyaml](https://github.com/yaml/pyyaml) - additional command line niceties
+]
+.kol-1-3.center[
+.width-50[![scipy logo](figures/logos/SciPy_logo.png)]
+<br /><br /><br />
+.width-50[![click logo](figures/logos/click_logo.png)]
+<br /><br />
+.width-25[![tqdm logo](figures/logos/tqdm_logo.gif)]
+]
+]
+
+---
+# Optional dependencies
+
+We have lots of optional dependencies depending on what users want to do:
+
+- [tensorflow](https://www.tensorflow.org/)
+- [torch](https://pytorch.org/)
+- [jax](https://jax.readthedocs.io/en/latest/)
+- [iminuit](https://scikit-hep.org/iminuit)
+- [uproot](https://uproot.readthedocs.io/)
 
 ---
 # Common utilities to ATLAS

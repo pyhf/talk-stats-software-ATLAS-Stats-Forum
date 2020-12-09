@@ -382,11 +382,11 @@ td {
     content: '';
     background: url("../assets/logos/logo_institution.png") no-repeat;
     background-size: 100% 100%;
-    width: 288px;
-    height: 50px;
+    width: 400px;
+    height: 250px;
     position: absolute;
-    bottom: 2em;
-    left: 3.3em;
+    bottom: -0.5em;
+    left: 1.5em;
     display: inline-block;
 }
 
