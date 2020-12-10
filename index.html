@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pyhf: pure-Python implementation of HistFactory with tensors and automatic differentiation [Matthew Feickert]</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" integrity="sha512-D0B6cFS+efdzUE/4wh5XF5599DtW7Q1bZOjAYGBfC0Lg9WjcrqPXZto020btDyrlDUrfYKsmzFvgf/9AB8J0Jw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/katex.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/grid.css">
+  </head>
+  <body>
+    <textarea id="source"></textarea>
+    <script src="./assets/remark-latest.min.js"></script>
+    <script src="./assets/auto-render.min.js"></script>
+    <script src="./assets/katex.min.js"></script>
+
+    <script type="text/javascript">
+        var options = {sourceUrl: "talk.md",
+                       highlightStyle: "tomorrow",
+                       ratio: "16:9",
+                       slideNumberFormat: "%current%"};
+        var renderMath = function() {
+            renderMathInElement(document.body, {delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false},
+            ]});
+        }
+      var slideshow = remark.create(options, renderMath);
+    </script>
+  </body>
+</html>
