@@ -150,7 +150,8 @@ $ python -m pip install --upgrade pyhf[jax,xmlio,minuit] # Gets JAX, uproot, and
 - [Unconstrained](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fit.html) and [constrained fits](https://scikit-hep.org/pyhf/_generated/pyhf.infer.mle.fixed_poi_fit.html)
 - [Exclusion fits](https://scikit-hep.org/pyhf/examples/notebooks/hello-world.html)
 - [Discovery fits](https://github.com/scikit-hep/pyhf/pull/520) (imminent `v0.6.0` release)
-- [Conversion to/from XML+ROOT to JSON](https://scikit-hep.org/pyhf/babel.html) (HistFitter and TRExFitter supported!)
+- [Conversion to/from XML+ROOT to JSON](https://scikit-hep.org/pyhf/babel.html)
+  - This works with any HistFactory workspace! (HistFitter, TRExFitter WSMaker, etc... don't need to do anything special)
 - [Brazil bands](https://scikit-hep.org/pyhf/examples/notebooks/binderexample/StatisticalAnalysis.html)
 - [Pull plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/pullplot.ipynb)<sup>†</sup>
 - [Impact/ranking plots](https://github.com/scikit-hep/pyhf/blob/master/docs/examples/notebooks/ImpactPlot.ipynb)<sup>†</sup>
@@ -231,7 +232,7 @@ Most recently gave a successful, in-depth tutorial at the ATLAS SUSY+Exotics wor
 .grid[
 .kol-2-3.push-1-6.center.gray[<i class="fas fa-quote-left"></i> Out of all the toolkits, why do you think your users choose to use yours? <i class="fas fa-quote-right"></i>]
 .kol-1-1[
-- Easy to use and install: [PyPI](https://pypi.org/project/pyhf/), [TestPyPI](https://test.pypi.org/project/pyhf/), [conda-forge](https://anaconda.org/conda-forge/pyhf), and [Docker](https://hub.docker.com/r/pyhf/pyhf)
+- Easy to use and install: [PyPI](https://pypi.org/project/pyhf/), [TestPyPI](https://test.pypi.org/project/pyhf/) (bleeding edge), [conda-forge](https://anaconda.org/conda-forge/pyhf), and [Docker](https://hub.docker.com/r/pyhf/pyhf)
 - Fast code, fast development cycle, fast feedback
 - Well-documented Python implementations, clear communication channels to devs and community
 - Command line complements the Pythonic API
@@ -398,7 +399,7 @@ We have lots of optional dependencies depending on what users want to do:
 - [TensorFlow](https://www.tensorflow.org/) - autodiff
 - [PyTorch](https://pytorch.org/) - autodiff
 - [JAX](https://jax.readthedocs.io/en/latest/) - autodiff, jit
-- [iminuit](https://scikit-hep.org/iminuit) - alternative minimizer choice
+- [iminuit](https://scikit-hep.org/iminuit) - minuit interface (MIGRAD/HESSE/MINOS available)
 - [uproot](https://uproot.readthedocs.io/) - ROOT I/O interop
 
 ---
