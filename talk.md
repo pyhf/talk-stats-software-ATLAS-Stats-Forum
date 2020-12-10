@@ -305,6 +305,31 @@ We don't necessarily believe any particular piece needs to be factorized out int
 ]
 
 ---
+# The Bigger Picture
+
+.kol-2-3[
+`pyhf` fits into the <i class="fas fa-flask"></i> "open science" ecosystem:
+- reproducible workflows via [RECAST](https://recast-docs.web.cern.ch/)/[REANA](https://www.reanahub.io/) benefits from JSON HistFactory
+  - reinterpretation is a breeze
+  - statistical workspaces can be serialized/preserved
+- [Reinterpretation Forum paper](https://scipost.org/10.21468/SciPostPhys.9.2.022) recommends the use of `pyhf` likelihoods
+- SModelS [provides an interface](https://arxiv.org/abs/2009.01809) for `pyhf`
+- Native [HEPdata support](https://github.com/HEPData/hepdata/issues/164) (ongoing!)
+- ATLAS SUSY group has [published](https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/Run2Summaries#Available_Likelihoods) `pyhf` JSON HistFactory workspaces for five analyses
+]
+.kol-1-3[
+<br>
+<br>
+<br>
+.center.width-100.tiny[
+[![cranmer talk](figures/two_tastes.png)](https://indico.cern.ch/event/962997/)
+<br />
+(stolen from Kyle Cranmer)
+]
+]
+
+
+---
 # Summary
 .kol-2-3[
 .large[`pyhf` provides:]
