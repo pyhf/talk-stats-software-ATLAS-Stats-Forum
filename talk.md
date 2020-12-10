@@ -10,7 +10,7 @@ count: false
 <br><br>
 [gstark@cern.ch](mailto:gstark@cern.ch)
 
-[ATLAS Statistics Forum](https://indico.cern.ch/event/979145/#6-pyhf-10-5)
+[ATLAS Statistics Forum](https://indico.cern.ch/event/979145/contributions/4125094/)
 
 December 10th, 2020
 

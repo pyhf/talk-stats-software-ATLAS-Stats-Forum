@@ -1,7 +1,7 @@
-# [`pyhf`: pure-Python implementation of HistFactory with tensors and automatic differentiation](https://indico.cern.ch/event/AAAAAAA/contributions/XXXXXX/)
+# [`pyhf`: pure-Python implementation of HistFactory with tensors and automatic differentiation](https://indico.cern.ch/event/979145/contributions/4125094/)
 Talk at the ATLAS Statistics Forum on `pyhf`
 
-Talk given at the [ATLAS Statistics Forum](https://indico.cern.ch/event/955391/)
+Talk given at the [ATLAS Statistics Forum](https://indico.cern.ch/event/979145/)
 
 Viewable online [here](https://pyhf.github.io/talk-stats-software-ATLAS-Stats-Forum/index.html)
 
