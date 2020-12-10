@@ -43,7 +43,7 @@ UCSC SCIPP
 ]
 ]
 
----
+<!-- ---
 # Questions
 
 > We intend to organise two Statistics Forum meetings, where we invite the developers of various packages to give 10 min talks (followed by some time for discussion) focusing strictly on the following points:
@@ -56,7 +56,7 @@ UCSC SCIPP
 - What additional common software could your toolkit take advantage of?
 - Would you be willing to contribute to the development of a centrally distributed toolkit that provides functionality for providing common statistical operations (e.g. calculating a p-value)?
 
-Speakers should .bold[upload their slides 48h in advance] of the meeting
+Speakers should .bold[upload their slides 48h in advance] of the meeting -->
 
 ---
 # `pyhf`: HistFactory in pure Python
